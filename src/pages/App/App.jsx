@@ -11,6 +11,7 @@ function App() {
   const [user, setUser] = useState(getUser());
 
   return (
+    <div>
     <main className="App">
       { user ?
         <>
@@ -23,9 +24,10 @@ function App() {
         </>
         :
         <AuthPage setUser={setUser} />
+        
       }
     </main>
+</div>
   );
 }
-
 export default App;
