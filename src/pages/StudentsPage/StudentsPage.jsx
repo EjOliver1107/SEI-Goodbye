@@ -1,5 +1,5 @@
 export default function StudentsPage() {
   return (
-    <h1>NewOrderPage</h1>
+    <h1>Students</h1>
   );
 }

@@ -8,7 +8,7 @@ export default function InstructorsPage() {
   
   return (
     <>
-      <h1>OrderHistoryPage</h1>
+      <h1>Instructors</h1>
       <button onClick={handleCheckToken}>Check When My Login Expires</button>
     </>
   );
