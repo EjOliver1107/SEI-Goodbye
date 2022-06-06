@@ -7,6 +7,8 @@ import HomePage from '../HomePage/HomePage';
 import './App.css';
 import StudentsPage from '../StudentsPage/StudentsPage';
 import InstructorsPage from '../InstructorsPage/InstructorsPage';
+import AboutPage from '../AboutPage/AboutPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -22,6 +24,8 @@ function App() {
             <Route path="/students" element={<StudentsPage />} />
             <Route path="/instructors" element={<InstructorsPage />} />
             <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </>
         :
