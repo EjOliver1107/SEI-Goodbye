@@ -9,6 +9,7 @@ import StudentsPage from '../StudentsPage/StudentsPage';
 import InstructorsPage from '../InstructorsPage/InstructorsPage';
 import AboutPage from '../AboutPage/AboutPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import CreateProfile from '../../components/CreateProfile/CreateProfile';
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/create" element={<CreateProfile />} />
           </Routes>
         </>
         :
