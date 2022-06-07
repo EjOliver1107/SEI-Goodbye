@@ -1,8 +1,13 @@
 export default function CreateProfile() {
+  const [content, setcontent] = useState(``); 
+   function handleSubmit(e) {
+       e.preventDefault();
+       handleAddProfile(content)
+   }
     return (
     <div>
         
-    <form action="../StudentsPage" method="POST">
+    <form onSubmit={handleSubmit}>
         <div>
             <label>What's Your Name?</label>
             <input type="text" name="name" placeholder="bogos binted?"></input>
