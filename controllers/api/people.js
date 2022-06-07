@@ -2,14 +2,14 @@ const Person = require('../../models/person');
 
 module.exports = {
     index,
-    new: newPerson,
-    // create,
-    // show,
+    addStudent,
 };
 
-// async function create(){
-
-// }
+async function addStudent(req,res) {
+    req.body.user = req.user._id;
+    const student = await new Person(req.body)
+    res.json(student)
+}
 async function newPerson(req,res) {
     res.render('/create');
 }

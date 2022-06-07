@@ -1,15 +1,15 @@
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
+import * as peopleAPI from '../../utilities/people-api'
 
-export default function CreateProfile(handleAddProfile) {
-//   const [content, setcontent] = useState(``); 
-//   async function handleSubmit(e) {
-//        e.preventDefault();
-//        handleAddProfile(content)
-//    };
+export default function CreateProfile() {
+  const [content, setcontent] = useState(``); 
+  async function handleSubmit(e) {
+       e.preventDefault();
+       const student = await peopleAPI.handleAddStudentProfile(content)   };
     return (
     <div>
         
-    <form /*onSubmit={handleSubmit}*/>
+    <form onSubmit={handleSubmit}>
         <div>
             <label>What's Your Name?</label>
             <input type="text" name="name" placeholder="bogos binted?"></input>
@@ -45,7 +45,7 @@ export default function CreateProfile(handleAddProfile) {
                     <input type="checkbox" name="favoriteLanguages" value="ejs" />
                 </div>
             </section>
-            <input type="submit" value="Create Profile" />
+            <input type="submit" value="Create Profile" onClick={() => handleSubmit } />
         </div>
     </form>
     </div>

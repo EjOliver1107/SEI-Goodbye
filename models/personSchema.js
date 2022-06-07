@@ -2,7 +2,8 @@ const Schema = require('mongoose').Schema;
 
 const personSchema = new Schema({
     name: { type: String, required: true},
-    category: { type: Schema.Types.ObjectId, ref: 'Category' },
+    category: { type: String, 
+    enum: ['student', 'instructor'] },
     age: { type: Number, required: true },
     favoriteLanguages: { 
         type: String,
