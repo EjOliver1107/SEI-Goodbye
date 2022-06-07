@@ -1,13 +1,15 @@
-export default function CreateProfile() {
-  const [content, setcontent] = useState(``); 
-   function handleSubmit(e) {
-       e.preventDefault();
-       handleAddProfile(content)
-   }
+// import React, { useState } from 'react';
+
+export default function CreateProfile(handleAddProfile) {
+//   const [content, setcontent] = useState(``); 
+//   async function handleSubmit(e) {
+//        e.preventDefault();
+//        handleAddProfile(content)
+//    };
     return (
     <div>
         
-    <form onSubmit={handleSubmit}>
+    <form /*onSubmit={handleSubmit}*/>
         <div>
             <label>What's Your Name?</label>
             <input type="text" name="name" placeholder="bogos binted?"></input>

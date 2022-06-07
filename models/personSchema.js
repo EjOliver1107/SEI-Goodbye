@@ -1,4 +1,4 @@
-const Schema = requite('mongoose').Schema;
+const Schema = require('mongoose').Schema;
 
 const personSchema = new Schema({
     name: { type: String, required: true},

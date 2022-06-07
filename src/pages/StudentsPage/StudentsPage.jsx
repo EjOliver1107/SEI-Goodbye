@@ -3,7 +3,6 @@ export default function StudentsPage() {
     <div>
     <h1>Students</h1>
     
-    <h1></h1>
     </div>
   );
 }

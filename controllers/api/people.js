@@ -1,13 +1,15 @@
-const Person = require('../../models/perosn');
+const Person = require('../../models/person');
 
 module.exports = {
     index,
     new: newPerson,
-    create,
-    show,
+    // create,
+    // show,
 };
 
-async function create()
+// async function create(){
+
+// }
 async function newPerson(req,res) {
     res.render('/create');
 }
