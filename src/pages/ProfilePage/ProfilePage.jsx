@@ -18,7 +18,13 @@ export default function ProfilePage({user}) {
             <div >
                 <h1>{user.name}'s Profile</h1>
                 <div id='info'>
+                    <div>Photo goes here</div>
+                    <h2>Name</h2>
                     <h3>{profile.name}</h3>
+                    <h2>Age</h2>
+                    <h3>{profile.age}</h3>
+                    <h2>Course title:</h2>
+                    <h3>{profile.category}</h3>
                 </div>
             </div>
         )
