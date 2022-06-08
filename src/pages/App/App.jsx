@@ -26,7 +26,7 @@ function App() {
             <Route path="/instructors" element={<InstructorsPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile" element={<ProfilePage user={user} />} />
             <Route path="/create" element={<CreateProfile setProfiles={setProfiles} />} />
           </Routes>
         </>

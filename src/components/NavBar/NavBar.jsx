@@ -14,10 +14,12 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav role="navigation">
       <div id="menuToggle">
+
         <input type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
+
         <ul id="menu">
         <li>Welcome, {user.name}</li>
       <Link to ="/"><li>Home</li></Link>
