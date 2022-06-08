@@ -13,7 +13,7 @@ import CreateProfile from '../../components/CreateProfile/CreateProfile';
 
 function App() {
   const [user, setUser] = useState(getUser());
-
+  const [profiles, setProfiles] = useState([])
   return (
     <div>
     <main className="App">
@@ -27,7 +27,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/create" element={<CreateProfile />} />
+            <Route path="/create" element={<CreateProfile setProfiles={setProfiles} />} />
           </Routes>
         </>
         :
