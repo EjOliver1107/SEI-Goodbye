@@ -1,9 +1,9 @@
 import sendRequest from "./send-request";
 const BASE_URL = '/api/signature';
 
-export function createProfile(signatureData){
+export function createSignature(signatureData){
     return sendRequest(BASE_URL, 'POST', signatureData);
 }
-export function getProfile() {
+export function getSignature() {
     return sendRequest(BASE_URL)
 }

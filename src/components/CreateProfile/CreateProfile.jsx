@@ -11,7 +11,7 @@ export default function CreateProfile({ setProfile }) {
       
 
   }); 
-  function handleChange(evt) {
+  async function handleChange(evt) {
     setFormData({...formData, [evt.target.name] : evt.target.value})
 }
   async function handleSubmit(evt) {
@@ -26,9 +26,9 @@ export default function CreateProfile({ setProfile }) {
     <form onSubmit={handleSubmit}>
         <div>
             <label>What's Your Name?</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="bogos binted?"></input>
+            <input type="text" name="name" value={formData.name} onChange= { handleChange } placeholder="bogos binted?"></input>
             <label >How Old Are You?</label>
-            <input type="text" name="age" value={formData.age} onChange={handleChange} placeholder="21"></input>
+            <input type="text" name="age" value={formData.age} onChange={ handleChange } placeholder="21"></input>
             <label>What was your role?</label>
             <select name="category" onChange={formData.category}>
                 <option value="student">Student</option>

@@ -1,6 +1,10 @@
+import './AboutPage.css'
+
+
 export default function AboutPage() {
     return (
-        <div>
+        <div id='intro' className="box animate fadeInUp one">
+            <section>
             <h1>About SEI-321</h1>
             <p>apolgy for bad english 
             <br></br>
@@ -12,6 +16,7 @@ export default function AboutPage() {
             <br></br>
             "no" 
             </p>
+            </section>
         </div>
     );
 }

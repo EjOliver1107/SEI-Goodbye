@@ -2,7 +2,9 @@ const Person = require('../../models/person');
 
 module.exports = {
   create,
-  setProfile
+  setProfile,
+  updateProfile,
+  getAll
 };
 
 async function create(req, res) {
@@ -13,4 +15,15 @@ async function create(req, res) {
 async function setProfile(req, res) {
   const profile = await Person.findOne({ user: req.user._id })
   res.json(profile);
+}
+async function updateProfile(req,res) {
+  const profile = await Person.findByIdAndUpdate( req.params.id,req.body, { new: true })
+  res.json(profile)
+}
+
+async function getAll(req, res) {
+  console.log('bogos binted')
+  const people = await Person.find({})
+  res.json(people)
+
 }

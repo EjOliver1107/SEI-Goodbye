@@ -7,3 +7,10 @@ export function createProfile(profileData){
 export function getProfile() {
     return sendRequest(BASE_URL)
 }
+export function update(person) {
+    return sendRequest(`${BASE_URL}/${person._id}`, 'PUT', person);
+}
+export function getAll() {
+    console.log('PLS WORK IM BEGGING')
+    return sendRequest(`${BASE_URL}/all`)
+}
