@@ -1,6 +1,62 @@
 #intro {
     background-image: url('https://generalassemb.ly/sites/default/files/styles/program_header_desktop_xxl_1x/public/2020-06/1_SEIR_HeaderImage_C2_taller%20%28f642b5d6-7b45-4442-b1c4-487e4a74c83d%29_0.jpg?itok=7jFPe5ru');
     background-position: center;
+    background-size: cover;
     width: 100vw;
-    height: 50vh;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
+#intro > section {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 5px solid red;
+    border-radius: 25px;
+}
+#aboutBtn > a {
+    text-decoration: none;
+    color: white;
+}
+#aboutBtn > a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+#aboutBtn:hover {
+    background-color: black;
+
+}
+.animate {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+.one {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
+  
