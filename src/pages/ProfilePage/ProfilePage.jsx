@@ -1,4 +1,4 @@
-import { getUser } from '../../utilities/users-service';
+import { user } from '../../utilities/users-service';
 import { useState, useEffect } from 'react';
 import * as  peopleAPI from '../../utilities/people-api';
 
