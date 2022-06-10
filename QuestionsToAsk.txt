@@ -2,6 +2,7 @@ Confusion on how to create Update and Delete forms
 Confusion on default select being student
 Confustion on Signature display and input
 Confusion on searchbar
+Confusion on if user is Loggedin
 fuck my life I'm nothing but confused 
 
 --Things to check out-- 
