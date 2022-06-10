@@ -8,6 +8,8 @@ export default function Home() {
         <h3>The browser to keep in touch with <br></br> students from General Assembly's SEIR-321!</h3>
         </section>
         <button id="aboutBtn"><a href="/about">About Our Cohort</a></button>
+        <button id="aboutBtn"><a href="/create">Create a Profile</a></button>
+
         </div>
     );
   }
