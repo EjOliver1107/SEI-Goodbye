@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as peopleAPI from '../../utilities/people-api'
-
+import './CreateProfile.css'
 export default function CreateProfile({ setProfile }) {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ export default function CreateProfile({ setProfile }) {
         navigate('/profile', {replace: true});
     };
     return (
-    <div>
+    <div id='profileForm'>
         
     <form onSubmit={handleSubmit}>
         <div>
@@ -37,7 +37,7 @@ export default function CreateProfile({ setProfile }) {
                 <option value="student">Student</option>
                 <option value="instructor">Instructor</option>
             </select>
-            {/* <label>Favorite Scripting/Programming Language?</label>
+            {/* /* <label>Favorite Scripting/Programming Language?</label>
             <section className="favoriteLanguages">
                 <div>
                     <p>HTML</p>
@@ -63,7 +63,8 @@ export default function CreateProfile({ setProfile }) {
                     <p>Embedded JavaScript (ejs (¬‿¬))</p>
                     <input type="checkbox" name="favoriteLanguages" onChange={handleChange} value="ejs" />
                 </div>
-            </section> */}
+            </section>  */}
+            <br />
             <input type="submit" value="Create Profile"  />
         </div>
     </form>
