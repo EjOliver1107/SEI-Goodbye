@@ -1,16 +1,11 @@
-import { checkToken } from "../../utilities/users-service";
-
-export default function InstructorsPage() {
-  
-  async function handleCheckToken() {
-    const expDate = await checkToken();
-    console.log(expDate);
-  }
-  
+export default function InstructorsPage({people}) {
+  const instructors = people.filter(p => p.category === 'instructor')
+  const allInstructors = instructors.map(i => <p key= {i._id}>{i.name}</p>)
+  console.log(instructors)
   return (
     <>
       <h1>Instructors</h1>
-      <button onClick={handleCheckToken}>Check When My Login Expires</button>
+      {allInstructors}
     </>
   );
 }
