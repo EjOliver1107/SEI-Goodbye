@@ -22,7 +22,6 @@ async function updateProfile(req,res) {
 }
 
 async function getAll(req, res) {
-  console.log('bogos binted')
   const people = await Person.find({})
   res.json(people)
 

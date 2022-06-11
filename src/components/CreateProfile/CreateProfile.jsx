@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as peopleAPI from '../../utilities/people-api'
 import './CreateProfile.css'
-export default function CreateProfile({ setProfile }) {
+export default function CreateProfile({ setProfile }){
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
       name: '',
       age: '',
-      category: 'student',
-    //   favoriteLanguages: [],
+      category: '',
       image: ''
       
 
@@ -33,7 +32,7 @@ export default function CreateProfile({ setProfile }) {
             <label >How Old Are You?</label>
             <input type="text" name="age" value={formData.age} onChange={handleChange} placeholder="21"></input>
             <label>What was your role?</label>
-            <select name="category" onChange={formData.category}>
+            <select name="category" onChange={handleChange} value={formData.category}>
                 <option value="student">Student</option>
                 <option value="instructor">Instructor</option>
             </select>

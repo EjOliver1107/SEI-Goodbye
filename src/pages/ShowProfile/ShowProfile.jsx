@@ -1,8 +1,7 @@
 import { getUser } from '../../utilities/users-service';
 import { useState, useEffect } from 'react';
 import * as  peopleAPI from '../../utilities/people-api';
-import './ProfilePage.css'
-export default function ProfilePage({user}) {
+export default function ShowProfile({user}) {
     const [profile, setProfile] =  useState({})
   
     // const  { id } = useParams()

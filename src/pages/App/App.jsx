@@ -11,7 +11,8 @@ import AboutPage from '../AboutPage/AboutPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import CreateProfile from '../../components/CreateProfile/CreateProfile';
 import * as peopleAPI from '../../utilities/people-api';
-
+import SignatureForm from '../../components/SignatureForm/SignatureForm';
+import ShowProfile from '../ShowProfile/ShowProfile';
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -24,6 +25,7 @@ function App() {
      }
      getAllPeople()
    }, [])
+   console.log('people' , people)
   return (
     <div>
     <main className="App">
@@ -32,12 +34,14 @@ function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path="/students" element={<StudentsPage people={people}/>} />
+            <Route path="/students" element={<StudentsPage people={people} />} />
             <Route path="/instructors" element={<InstructorsPage people={people} />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/profile" element={<ProfilePage user={user} />} />
             <Route path="/create" element={<CreateProfile setProfiles={setProfiles} />} />
+            <Route path="/sign" element={<SignatureForm  />} />
+            <Route path="/profile/:id" element={<ShowProfile user={user}/>} />
           </Routes>
         </>
         :
