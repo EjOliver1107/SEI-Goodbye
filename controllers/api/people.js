@@ -4,7 +4,8 @@ module.exports = {
   create,
   setProfile,
   updateProfile,
-  getAll
+  getAll,
+  deleteProfile
 };
 
 async function create(req, res) {
@@ -25,4 +26,8 @@ async function getAll(req, res) {
   const people = await Person.find({})
   res.json(people)
 
+}
+async function deleteProfile(req, res) {
+  const remove = await Person.findByIdAndDelete(req.params.id)
+  res.json(remove)
 }

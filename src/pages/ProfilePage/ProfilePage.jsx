@@ -2,9 +2,16 @@ import { getUser } from '../../utilities/users-service';
 import { useState, useEffect } from 'react';
 import * as  peopleAPI from '../../utilities/people-api';
 import './ProfilePage.css'
-export default function ProfilePage({user}) {
+
+
+export default function ProfilePage({user, people, setPeople}) {
     const [profile, setProfile] =  useState({})
-  
+    
+    // async function deleteProfile() {
+    //     const removed = await peopleAPI.deleteProfile(person._id);
+    //     const updatePeople = people.filter(person => person._id !== removed._id)
+    //     setProfile = {updatePeople}
+    // }
     // const  { id } = useParams()
     // const person = profiles.find(p => p._id === id)
     useEffect(() => {
@@ -42,6 +49,7 @@ export default function ProfilePage({user}) {
                 <button><a href='/sign'>Add Signature!</a></button>
                 </div>
                 </div>
+                {/* <button onClick= {deletePost}>Delete</button> */}
             </div>
         )
 }

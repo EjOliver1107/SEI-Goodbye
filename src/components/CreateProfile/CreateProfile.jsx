@@ -7,7 +7,7 @@ export default function CreateProfile({ setProfile }){
     const [formData, setFormData] = useState({
       name: '',
       age: '',
-      category: '',
+      category: 'student',
       image: ''
       
 

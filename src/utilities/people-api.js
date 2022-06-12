@@ -7,7 +7,7 @@ export function createProfile(profileData){
 export function getProfile() {
     return sendRequest(BASE_URL)
 }
-export function getAll() {
+export function getAll(profileData) {
     console.log('PLS WORK IM BEGGING')
-    return sendRequest(`${BASE_URL}/all`)
+    return sendRequest(`${BASE_URL}/all`, profileData)
 }

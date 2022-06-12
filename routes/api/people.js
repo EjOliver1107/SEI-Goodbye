@@ -8,5 +8,6 @@ router.post('/', ensureLoggedIn, peopleCtrl.create)
 router.get('/', ensureLoggedIn, peopleCtrl.setProfile )
 router.put('/:id', ensureLoggedIn, peopleCtrl.updateProfile);
 router.get('/all', ensureLoggedIn, peopleCtrl.getAll)
+router.delete('/:id', ensureLoggedIn, peopleCtrl.deleteProfile);
 
 module.exports = router;
