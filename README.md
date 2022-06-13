@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="'https://generalassemb.ly/sites/default/files/styles/program_header_desktop_xxl_1x/public/2020-06/1_SEIR_HeaderImage_C2_taller%20%28f642b5d6-7b45-4442-b1c4-487e4a74c83d%29_0.jpg?itok=7jFPe5ru'"/>
+   <img src="https://generalassemb.ly/sites/default/files/styles/program_header_desktop_xxl_1x/public/2020-06/1_SEIR_HeaderImage_C2_taller%20%28f642b5d6-7b45-4442-b1c4-487e4a74c83d%29_0.jpg?itok=7jFPe5ru"/>
    <h1>SEI-Goodbye</h1>
    <h3><a href="https://sei-goodbye.herokuapp.com">Visit the site!</a></h3>
    <h5>Ej Oliver</h5>                             
