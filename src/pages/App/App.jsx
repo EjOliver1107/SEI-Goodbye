@@ -18,6 +18,8 @@ function App() {
   const [user, setUser] = useState(getUser());
   const [profiles, setProfiles] = useState({})
   const [people, setPeople] = useState([])
+  const [profile, setProfile] =  useState({})
+
    useEffect(() => { 
      async function getAllPeople() {
        const allPeople = await peopleAPI.getAll()
@@ -26,6 +28,13 @@ function App() {
      getAllPeople()
    }, [])
    console.log('people' , people)
+  
+   async function getProfileData(id) {
+    const profile = await peopleAPI.getProfile(id) 
+    setProfile(profile) 
+} 
+// getProfileData()
+
   return (
     <div>
     <main className="App">
@@ -34,14 +43,14 @@ function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path="/students" element={<StudentsPage people={people} />} />
+            <Route path="/students" element={<StudentsPage people={people} getProfileData={getProfileData} />} />
             <Route path="/instructors" element={<InstructorsPage people={people} />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/profile" element={<ProfilePage user={user} />} />
             <Route path="/create" element={<CreateProfile setProfiles={setProfiles} />} />
-            <Route path="/sign" element={<SignatureForm  />} />
-            <Route path="/profile/:id" element={<ShowProfile user={user}/>} />
+            <Route path="/:id/sign" element={<SignatureForm profile={profile} />} />
+            <Route path="/profile/:id" element={<ShowProfile user={user} profile={profile}  />} />
           </Routes>
         </>
         :

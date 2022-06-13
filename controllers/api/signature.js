@@ -1,4 +1,5 @@
 const Signature = require('../../models/signature');
+const Person = require('../../models/person');
 
 module.exports = {
   create,
@@ -6,8 +7,11 @@ module.exports = {
 };
 
 async function create(req, res) {
-    req.body.user = req.user._id;
-    const sign = await Signature.create(req.body)
+  console.log(req.params.id , 'Im pooping')  
+  req.body.user = req.user._id;
+    const sign = await Person.findOne({_id: req.params.id})
+    sign.signatures.push(req.body)
+    await sign.save()
     res.json(sign)
 }
 async function setSig(req, res) {

@@ -1,16 +1,16 @@
 import './SignatureForm.css'
 import React, {useState} from 'react';
 import * as sigAPI from '../../utilities/signature-api';
-export default function SignatureForm() {
+export default function SignatureForm({profile}) {
     const [sigformData, setsigFormData] = useState({
         content: ''
     })
     async function handleSigChange(evt) {
-        setsigFormData({...sigformData, [evt.target.content] : evt.target.value})
+        setsigFormData({...sigformData, [evt.target.name] : evt.target.value})
     }
     async function handleSigSubmit(evt) {
         evt.preventDefault()
-        const signature = await sigAPI.createSignature(sigformData)
+        const signature = await sigAPI.createSignature(sigformData, profile.user)
     }
     return (
         <>

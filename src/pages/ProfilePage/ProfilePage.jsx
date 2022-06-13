@@ -14,14 +14,14 @@ export default function ProfilePage({user, people, setPeople}) {
     // }
     // const  { id } = useParams()
     // const person = profiles.find(p => p._id === id)
-    useEffect(() => {
+    // useEffect(() => {
         
         async function getProfileData() {
             const profile = await peopleAPI.getProfile() 
             setProfile(profile) 
         } 
         getProfileData()
-    }, [])
+    // }, [])
     console.log(profile)
     // async function updateProfile() {
     //    const updateProfile = await peopleAPI.update(formData, profile._id)
@@ -44,9 +44,8 @@ export default function ProfilePage({user, people, setPeople}) {
 
 
                 </div>
-                <div id='siginfo'>
-                <h2>Signatures</h2>
-                <button><a href='/sign'>Add Signature!</a></button>
+                <div>
+                    <p>Congratulations on passing the course! You've done great a job getting this far and I hope nothing but the best on your endeavors as full stack engineer! -Ej </p>
                 </div>
                 </div>
                 {/* <button onClick= {deletePost}>Delete</button> */}

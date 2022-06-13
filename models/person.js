@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = require('mongoose').Schema;
 
+const signatureSchema = new Schema({
+    content: { type: String, required: true}
+}) 
+
 const personSchema = new Schema({
     name: { type: String, required: true},
     category: { type: String, 
@@ -11,7 +15,8 @@ const personSchema = new Schema({
         type: String,
         enum: ['html', 'css', 'js', 'python', 'jsx', 'ejs'],
         required: false},
-    image: { type: String }
+    image: { type: String },
+    signatures: [signatureSchema]
 });
 
 module.exports = mongoose.model('Person', personSchema);

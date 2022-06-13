@@ -5,9 +5,13 @@ module.exports = {
   setProfile,
   updateProfile,
   getAll,
-  deleteProfile
+  deleteProfile,
+  userProfile,
 };
-
+async function userProfile(req, res) {
+  const personProfile = await Person.findById(req.params.id)
+  res.json(personProfile)
+}
 async function create(req, res) {
     req.body.user = req.user._id;
     const profile = await Person.create(req.body)

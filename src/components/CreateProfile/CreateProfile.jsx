@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as peopleAPI from '../../utilities/people-api'
 import './CreateProfile.css'
+
+
 export default function CreateProfile({ setProfile }){
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -20,7 +22,7 @@ export default function CreateProfile({ setProfile }){
        const profile = await peopleAPI.createProfile(formData)
        //    const student = await peopleAPI.handleAddStudentProfile(content)   
     //     setNewProfile(" ");
-        navigate('/profile', {replace: true});
+        navigate('/students', {replace: true});
     };
     return (
     <div id='profileForm'>

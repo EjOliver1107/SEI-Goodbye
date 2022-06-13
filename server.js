@@ -23,7 +23,7 @@ app.use(require('./config/checkToken'));
 // Put all API routes here (before the catch-all)
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/people', require('./routes/api/people'));
-
+app.use('/api/signature', require('./routes/api/signature'));
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 // app.use('/api/people', ensureLoggedIn, require('./routes/api/people'));
 

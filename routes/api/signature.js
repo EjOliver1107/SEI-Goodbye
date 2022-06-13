@@ -4,8 +4,8 @@ const sigCtrl = require('../../controllers/api/signature');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 
-router.post('/', sigCtrl.create)
-router.get('/', sigCtrl.setSig )
+router.post('/:id/signature', ensureLoggedIn, sigCtrl.create)
+router.get('/', ensureLoggedIn, sigCtrl.setSig )
 
 
 module.exports = router;

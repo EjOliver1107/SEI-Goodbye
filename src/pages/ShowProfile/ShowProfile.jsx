@@ -1,20 +1,19 @@
 import { getUser } from '../../utilities/users-service';
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import * as  peopleAPI from '../../utilities/people-api';
-export default function ShowProfile({user}) {
-    const [profile, setProfile] =  useState({})
-  
+export default function ShowProfile({user, profile}) {
+    // const [profile, setProfile] =  useState({})
+  async function deleteProfile(id) {
+    const removed = await peopleAPI.deleteProfile(id);
+    // const updateProfiles = profile.filter(id)
+  }
     // const  { id } = useParams()
     // const person = profiles.find(p => p._id === id)
-    useEffect(() => {
+    // useEffect(() => {
         
-        async function getProfileData() {
-            const profile = await peopleAPI.getProfile() 
-            setProfile(profile) 
-        } 
-        getProfileData()
-    }, [])
-    console.log(profile)
+    // }, [])
+    console.log(profile, 'This b**** empty')
     // async function updateProfile() {
     //    const updateProfile = await peopleAPI.update(formData, profile._id)
     //    const updated = profiles
@@ -23,7 +22,7 @@ export default function ShowProfile({user}) {
             <div id='wholeProfile'>
              
 
-                <h1>{user.name}'s Profile</h1>
+                <h1>{profile && profile.name}'s Profile</h1>
                 <div id='profilePhoto'>Photo goes here</div>
                 <div className='profile'>
                 <div id='info'>
@@ -38,7 +37,10 @@ export default function ShowProfile({user}) {
                 </div>
                 <div id='siginfo'>
                 <h2>Signatures</h2>
-                <button><a href='/sign'>Add Signature!</a></button>
+                <button><a href={`/${profile._id}/sign`}> Add Signature!</a></button>
+                </div>
+                <div id='delBtn'>
+                    <button onClick={() => deleteProfile(profile._id)} >Delete Profile</button>
                 </div>
                 </div>
             </div>
