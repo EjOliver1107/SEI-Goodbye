@@ -7,7 +7,7 @@ export default function InstructorsPage({people}) {
 
   return (
     <>
-    <div id='list-stuff'>
+    <div id='list-stuff' className="box animate fadeInUp one">
       <h1>Instructors</h1>
       {instructors.map(e => <Link to = {`/profile/${e._id}`}>{e.name}</Link> )}
       </div>

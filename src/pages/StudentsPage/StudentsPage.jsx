@@ -12,7 +12,7 @@ export default function StudentsPage({ people, getProfileData }) {
       // window.location.reload(false);
 
   return (
-    <div id='list-stuff'>
+    <div id='list-stuff' className="box animate fadeInUp one">
     <h1>Students</h1>
     {/* <Link to = {`/profile/${people._id}`}> */}
       {students.map(i => <Link to={`/profile/${i._id}`}><button onClick={() => getProfileData(i._id)}>{i.name}</button><br></br></Link>)}
