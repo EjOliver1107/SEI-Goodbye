@@ -17,21 +17,27 @@
 <h1>:pencil: Description</h1>
 <p>Welcome to SEI-Goodbye a browser created to collect some final messages during the cohort's last meeting!</p>
 
+<details>
+<summary> :gear: Functionality</summary>
+
+| Description | Screenshot |
+|------------ | ------------|
+| <h3 align="center">Home Page</h3> | <img src="https://i.imgur.com/WFqAauK.png" width="700"/> |
+| <h3 align="center">NavBar</h3> | <img src="https://i.imgur.com/tzH0NPI.png" width="700"/> |
+| <h3 align="center">Create a Profile</h3> | <img src="https://i.imgur.com/dAJVuri.png" width="700"/> |
+| <h3 align="center">Visiting a Profile</h3> | <img src="https://i.imgur.com/yH88ua2.png" width="700"/> |
 
 
 
 
 
-
-
-
-
-
+</details>
 ## :computer: Technologies Used
 
 ![Mongoose ODM](https://img.shields.io/badge/-Mongoose_ODM-333?style=flat&logo=mongodb)
 ![Node](https://img.shields.io/badge/-Node.js-333?style=flat&logo=node.js)
 ![Express](https://img.shields.io/badge/-Express-333?style=flat&logo=express)
+![React](https://img.shields.io/badge/-React-333?style=flat&logo=react)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-333?style=flat&logo=mongodb)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-333?style=flat&logo=javascript) 
 ![HTML5](https://img.shields.io/badge/-HTML5-333?style=flat&logo=html5)
