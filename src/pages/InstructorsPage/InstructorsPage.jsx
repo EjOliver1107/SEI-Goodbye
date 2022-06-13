@@ -1,3 +1,4 @@
+import '../StudentsPage/DisplayPage.css';
 import { Link } from 'react-router-dom';
 export default function InstructorsPage({people}) {
   const instructors = people.filter(p => p.category === 'instructor')
@@ -6,8 +7,10 @@ export default function InstructorsPage({people}) {
 
   return (
     <>
+    <div id='list-stuff'>
       <h1>Instructors</h1>
       {instructors.map(e => <Link to = {`/profile/${e._id}`}>{e.name}</Link> )}
+      </div>
     </>
   );
 }

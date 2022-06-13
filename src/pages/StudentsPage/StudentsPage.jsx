@@ -1,3 +1,4 @@
+import './DisplayPage.css';
 import { useState, useEffect } from 'react';
 import * as peopleAPI from '../../utilities/people-api';
 import { Link } from 'react-router-dom';
@@ -11,7 +12,7 @@ export default function StudentsPage({ people, getProfileData }) {
       // window.location.reload(false);
 
   return (
-    <div>
+    <div id='list-stuff'>
     <h1>Students</h1>
     {/* <Link to = {`/profile/${people._id}`}> */}
       {students.map(i => <Link to={`/profile/${i._id}`}><button onClick={() => getProfileData(i._id)}>{i.name}</button><br></br></Link>)}

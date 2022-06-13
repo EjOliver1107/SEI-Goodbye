@@ -24,24 +24,31 @@ export default function ShowProfile({user, profile}) {
     //    const updated = profiles
     // }
         return (
-            <div id='wholeProfile'>
-             
-
+            <div id='wholeProfile' className="box animate fadeInUp one">
+             <div id='profile-container'>
+                <div id='intro-prof'>
+                <img src={profile.image} alt="user's profile picture" width='75' height='75' />
                 <h1>{profile && profile.name}'s Profile</h1>
-               
-                    <img src={profile.image} alt="user's profile picture" width='250' height='250' />
+                </div>
                
                 <div className='profile'>
                 <div id='info'>
-                    <h2>Name</h2>
+                    <div>
+                    <h2>Name:</h2>
                     <h3>{profile.name}</h3>
-                    <h2>Age</h2>
+                    </div>
+                    <div>
+                    <h2>Age:</h2>
                     <h3>{profile.age}</h3>
-                    <h2>Course title:</h2>
+                    </div>
+                    <div>
+                    <h2>Status:</h2>
                     <h3>{profile.category}</h3>
+                    </div>
 
 
                 </div>
+                <br />
                 <div id='siginfo'>
                     <h2>{profile && profile.name}'s message to the cohort:</h2>
                     <p>{profile.message}</p>
@@ -50,6 +57,7 @@ export default function ShowProfile({user, profile}) {
                 </div>
                 <div id='delBtn'>
                     <button onClick={() => deleteProfile(profile._id)} >Delete Profile</button>
+                </div>
                 </div>
                 </div>
             </div>
