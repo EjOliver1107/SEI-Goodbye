@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as peopleAPI from '../../utilities/people-api'
 import './CreateProfile.css'
@@ -6,14 +6,19 @@ import './CreateProfile.css'
 
 export default function CreateProfile({ setProfile }){
     const navigate = useNavigate();
+    const [refresh, setRefresh] = useState(true)
     const [formData, setFormData] = useState({
       name: '',
       age: '',
       category: 'student',
+      message: '',
       image: ''
       
 
-  }); 
+  });
+    // useEffect(() => {
+    //     [refresh];
+    // })
   function handleChange(evt) {
     setFormData({...formData, [evt.target.name] : evt.target.value})
 }
@@ -22,13 +27,16 @@ export default function CreateProfile({ setProfile }){
        const profile = await peopleAPI.createProfile(formData)
        //    const student = await peopleAPI.handleAddStudentProfile(content)   
     //     setNewProfile(" ");
-        navigate('/students', {replace: true});
+        setRefresh(!refresh)
+        navigate('/students');
     };
     return (
     <div id='profileForm'>
         
     <form onSubmit={handleSubmit}>
         <div>
+            <label >Send a link of your image!</label>
+            <input type="text" name="image" value={formData.image} onChange={handleChange} placeholder='url here' />
             <label>What's Your Name?</label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="bogos binted?"></input>
             <label >How Old Are You?</label>
@@ -38,6 +46,8 @@ export default function CreateProfile({ setProfile }){
                 <option value="student">Student</option>
                 <option value="instructor">Instructor</option>
             </select>
+            <label >Leave a message for people to see!</label>
+            <input type="text" name="message" value={formData.message} onChange={handleChange} placeholder='HAGS' />
             {/* /* <label>Favorite Scripting/Programming Language?</label>
             <section className="favoriteLanguages">
                 <div>
@@ -66,7 +76,7 @@ export default function CreateProfile({ setProfile }){
                 </div>
             </section>  */}
             <br />
-            <input type="submit" value="Create Profile"  />
+            <input type="submit" setRefresh={refresh} value="Create Profile"  />
         </div>
     </form>
     </div>

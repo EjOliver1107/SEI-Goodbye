@@ -1,11 +1,16 @@
 import { getUser } from '../../utilities/users-service';
+import '../ProfilePage/ProfilePage.css'
 import { useState, useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as  peopleAPI from '../../utilities/people-api';
 export default function ShowProfile({user, profile}) {
+    const navigate = useNavigate();
+
     // const [profile, setProfile] =  useState({})
   async function deleteProfile(id) {
     const removed = await peopleAPI.deleteProfile(id);
+    navigate('/students');
+
     // const updateProfiles = profile.filter(id)
   }
     // const  { id } = useParams()
@@ -23,7 +28,9 @@ export default function ShowProfile({user, profile}) {
              
 
                 <h1>{profile && profile.name}'s Profile</h1>
-                <div id='profilePhoto'>Photo goes here</div>
+               
+                    <img src={profile.image} alt="user's profile picture" width='250' height='250' />
+               
                 <div className='profile'>
                 <div id='info'>
                     <h2>Name</h2>
@@ -36,8 +43,10 @@ export default function ShowProfile({user, profile}) {
 
                 </div>
                 <div id='siginfo'>
-                <h2>Signatures</h2>
-                <button><a href={`/${profile._id}/sign`}> Add Signature!</a></button>
+                    <h2>{profile && profile.name}'s message to the cohort:</h2>
+                    <p>{profile.message}</p>
+                {/* <h2>Signatures</h2>
+                <button><a href={`/${profile._id}/sign`}> Add Signature!</a></button> */}
                 </div>
                 <div id='delBtn'>
                     <button onClick={() => deleteProfile(profile._id)} >Delete Profile</button>

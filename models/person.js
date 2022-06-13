@@ -15,8 +15,9 @@ const personSchema = new Schema({
         type: String,
         enum: ['html', 'css', 'js', 'python', 'jsx', 'ejs'],
         required: false},
-    image: { type: String },
-    signatures: [signatureSchema]
+    message: { type: String, required: true },
+    signatures: [signatureSchema],
+    image: {type: String, required: true }
 });
 
 module.exports = mongoose.model('Person', personSchema);
