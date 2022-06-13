@@ -44,7 +44,7 @@ function App() {
           <Routes>
             {/* Route components in here */}
             <Route path="/students" element={<StudentsPage people={people} getProfileData={getProfileData} />} />
-            <Route path="/instructors" element={<InstructorsPage people={people} />} />
+            <Route path="/instructors" element={<InstructorsPage people={people} getProfileData={getProfileData} />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/profile" element={<ProfilePage user={user} />} />
